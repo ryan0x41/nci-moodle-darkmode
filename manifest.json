@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "NCI Moodle Darkmode Extension",
+  "version": "1.0",
+  "description": "Dark Mode for NCI Moodle",
+  "content_scripts": [
+    {
+      "matches": ["*://moodle2024.ncirl.ie/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
