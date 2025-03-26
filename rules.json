@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "moodle2024.ncirl.ie/theme/styles.php/boost/1739279039_1/all",
+      "resourceTypes": ["stylesheet"]
+    }
+  }
+]
+

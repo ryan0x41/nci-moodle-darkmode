@@ -3,11 +3,28 @@
   "name": "NCI Moodle Darkmode Extension",
   "version": "1.0",
   "description": "Dark Mode for NCI Moodle",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
   "content_scripts": [
     {
       "matches": ["*://moodle2024.ncirl.ie/*"],
+      "css": ["darkmode.css"],
       "js": ["content.js"],
-      "run_at": "document_end"
+      "run_at": "document_start"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "block-original-css",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["darkmode.css"],
+      "matches": ["<all_urls>"]
     }
   ]
 }
