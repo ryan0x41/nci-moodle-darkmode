@@ -1,5 +1,9 @@
 window.addEventListener('DOMContentLoaded', function() {
-  const blockedLink = document.querySelector('link[href="https://moodle2024.ncirl.ie/theme/styles.php/boost/1739279039_1/all"]');
+	// lol
+  const blockedLink = Array.from(document.querySelectorAll('link[href]')).find(link =>
+	  /https:\/\/moodle2024\.ncirl\.ie\/theme\/styles\.php\/boost\/\d+(_\d+)?\/all/.test(link.href)
+	);
+
   if (blockedLink) {
     blockedLink.remove();
     console.log("[+] darkmode injection started, removed all.css reference");
