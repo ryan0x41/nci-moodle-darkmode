@@ -1,14 +1,12 @@
 window.addEventListener('DOMContentLoaded', function() {
 	// lol
   const blockedLink = Array.from(document.querySelectorAll('link[href]')).find(link =>
-	  /https:\/\/moodle2024\.ncirl\.ie\/theme\/styles\.php\/boost\/\d+(_\d+)?\/all/.test(link.href)
+	  /https:\/\/moodle202[45]\.ncirl\.ie\/theme\/styles\.php\/boost\/\d+(_\d+)?\/all/.test(link.href)
 	);
-
   if (blockedLink) {
     blockedLink.remove();
     console.log("[+] darkmode injection started, removed all.css reference");
   }
-
   // inject fa css after darkmode.css is loaded
   const faStyle = document.createElement("style");
   faStyle.textContent = `
@@ -25,7 +23,6 @@ window.addEventListener('DOMContentLoaded', function() {
 						          url(/theme/font.php/boost/core/1739279039/fa-regular-400.ttf) format("truetype")
 						  }`
 						  ;
-
   document.head.appendChild(faStyle);
   console.log("[+] fa injected");
 });

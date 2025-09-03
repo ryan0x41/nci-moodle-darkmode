@@ -8,7 +8,10 @@
   ],
   "content_scripts": [
     {
-      "matches": ["*://moodle2024.ncirl.ie/*"],
+      "matches": [
+        "*://moodle2024.ncirl.ie/*",
+        "*://moodle2025.ncirl.ie/*"
+      ],
       "css": ["darkmode.css"],
       "js": ["content.js"],
       "run_at": "document_start"
